@@ -1,4 +1,4 @@
-# encoding=utf-8
+# coding=utf-8
 import xlrd
 import json
 
@@ -130,3 +130,10 @@ print open('test.txt','w').write('tyutyutyutyu')
 # print json_data
 #
 # print Sheet.col_values(0).index(u'autoAX')
+
+
+params = {'title': '测试第一次大会', 'address': '地中海风情岛', 'time': '2017-11-20'}
+headers = {'Content-Type': 'application/x-www-form-urlencoded'}
+response = requests.post('http://127.0.0.1:8000/api/add_event', data=params, headers=headers)
+print response.text
+
