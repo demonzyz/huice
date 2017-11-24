@@ -132,7 +132,7 @@ print open('test.txt','w').write('tyutyutyutyu')
 # print Sheet.col_values(0).index(u'autoAX')
 
 #插入会议接口
-# params = {'title': '测试第六次大会1', 'address': '地中海风情岛6', 'time': '2017-11-20', 'status': '123'}
+# params = {'title': '测试第三次大会', 'address': '地中海风情岛', 'time': '2017-11-20', 'status': 1}
 # headers = {'Content-Type': 'application/x-www-form-urlencoded'}
 # response = requests.post('http://127.0.0.1:8000/api/add_event/', data=params, headers=headers)
 # print response.text
@@ -156,9 +156,15 @@ print open('test.txt','w').write('tyutyutyutyu')
 # print response.text
 
 #添加嘉宾状态接口
-params = {'event_id': '1', 'name': '张永智', 'phone_number': '13718698241'}
+# params = {'event_id': '1', 'name': '田伟峰2', 'phone_number': '13718698241'}
+# headers = {'Content-Type': 'application/x-www-form-urlencoded'}
+# response = requests.post('http://127.0.0.1:8000/api/add_guest', data=params, headers=headers)
+# print response.text
+
+#查询嘉宾接口
+params = {'event_id': '1'}
 headers = {'Content-Type': 'application/x-www-form-urlencoded'}
-response = requests.post('http://127.0.0.1:8000/api/add_guest', data=params, headers=headers)
+response = requests.get('http://127.0.0.1:8000/api/get_guestlist', params=params, headers=headers)
 print response.text
 
 
