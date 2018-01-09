@@ -130,9 +130,9 @@ print open('test.txt','w').write('tyutyutyutyu')
 # print json_data
 #
 # print Sheet.col_values(0).index(u'autoAX')
-
-#插入会议接口
-# params = {'title': '测试第三次大会', 'address': '地中海风情岛', 'time': '2017-11-20', 'status': 1}
+#
+# 插入会议接口
+# params = {'title': '测试第一次大会', 'address': '地中海风情岛', 'time': '2017-11-20', 'status': 1}
 # headers = {'Content-Type': 'application/x-www-form-urlencoded'}
 # response = requests.post('http://127.0.0.1:8000/api/add_event/', data=params, headers=headers)
 # print response.text
@@ -140,34 +140,45 @@ print open('test.txt','w').write('tyutyutyutyu')
 #查询接口
 # params = {'title': '测试第六次大会'}
 # headers = {'Content-Type': 'application/x-www-form-urlencoded'}
-# response = requests.get('http://127.0.0.1:8000/api/get_eventlist', params=params, headers=headers)
+# response = requests.get('http://127.0.0.1:8000/api/get_eventlist/', params=params, headers=headers)
 # print response.text
 
 #查询发布会详细信息接口
-# params = {'id': '11'}
+# params = {'id': '1'}
 # headers = {'Content-Type': 'application/x-www-form-urlencoded'}
-# response = requests.get('http://127.0.0.1:8000/api/get_eventdetail', params=params, headers=headers)
+# response = requests.get('http://127.0.0.1:8000/api/get_eventdetail/', params=params, headers=headers)
 # print response.text
 
 # #修改会议状态接口
 # params = {'id': '3', 'status': 3}
 # headers = {'Content-Type': 'application/x-www-form-urlencoded'}
-# response = requests.post('http://127.0.0.1:8000/api/set_status', data=params, headers=headers)
+# response = requests.post('http://127.0.0.1:8000/api/set_status/', data=params, headers=headers)
 # print response.text
 
 #添加嘉宾状态接口
-# params = {'event_id': '1', 'name': '田伟峰2', 'phone_number': '13718698241'}
+# params = {'id': '1', 'name': '张永智1', 'phone_number': '13718698241'}
 # headers = {'Content-Type': 'application/x-www-form-urlencoded'}
-# response = requests.post('http://127.0.0.1:8000/api/add_guest', data=params, headers=headers)
+# response = requests.post('http://127.0.0.1:8000/api/add_guest/', data=params, headers=headers)
 # print response.text
 
-#查询嘉宾接口
-params = {'event_id': '1'}
-headers = {'Content-Type': 'application/x-www-form-urlencoded'}
-response = requests.get('http://127.0.0.1:8000/api/get_guestlist', params=params, headers=headers)
-print response.text
 
+#查询嘉宾状态接口
+# params = {'event_id': '1', 'phone_number': '13718698242'}
+# headers = {'Content-Type': 'application/x-www-form-urlencoded'}
+# response = requests.get('http://127.0.0.1:8000/api/get_guestlist/', params=params, headers=headers)
+# print response.text
 
+#嘉宾签到接口
+# params = {'id': '1', 'phone_number': '13718698242', 'username': 'huice', 'sign': 'f64fc017ab1ccc268bf48c61b27dbd62'}
+# headers = {'Content-Type': 'application/x-www-form-urlencoded', 'token': '1ba9db34f5fdd535ea479a6fb971e46d7d14f3a3', 'random': '12345'}
+# response = requests.post('http://127.0.0.1:8000/api/sign/', data=params, headers=headers)
+# print response.text
+
+#登录接口
+# params = {'username': 'huice', 'password': 'MTIzaHVpY2VodWljZSFAIw=='}
+# headers = {'Content-Type': 'application/x-www-form-urlencoded'}
+# response = requests.post('http://127.0.0.1:8000/api/register/', data=params, headers=headers)
+# print response.text
 
 
 
