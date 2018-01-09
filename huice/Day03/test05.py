@@ -28,5 +28,5 @@ def quick_sort(aList = []):
 
         return smallerList+flags+biggerList
 
-list2sort = [30,20,10,90,80,50]
+list2sort = [30,20,30,90,80,50]
 print quick_sort(list2sort)
